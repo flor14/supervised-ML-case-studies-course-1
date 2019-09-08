@@ -1,5 +1,3 @@
-FROM rocker/binder:3.4.4
-
 ## Copies your repo files into the Docker Container
 USER root
 RUN apt-get update && apt-get -y install libgsl-dev
