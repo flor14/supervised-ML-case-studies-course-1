@@ -1,2 +1,4 @@
-test <- function(){success("Well done!")} 
+test <- function(){
+  success("Well done!")
+} 
 
