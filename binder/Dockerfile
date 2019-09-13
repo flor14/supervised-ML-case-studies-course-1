@@ -15,11 +15,9 @@ COPY . ${HOME}
 ## COPY binder ${HOME}
 RUN chown -R ${NB_USER} ${HOME}
 
-## Run an deps.R script, if it exists.
-RUN installGithub.R cran/e1071@1.6-8 cran/gbm@2.1.1 cran/randomForest@4.6-12 cran/xgboost@0.6.4.1 cran/caret@6.0-78 cran/yardstick@0.0.1 cran/tidyverse@1.2.1 
-
 ## Become normal user again
 USER ${NB_USER}
 
 ## Run an install.R script, if it exists.
-## RUN if [ -f install.R ]; then R --quiet -f install.R; fi
+RUN if [ -f install.R ]; then R --quiet -f install.R; fi
+
